@@ -24,18 +24,19 @@ In this project,
 
  * run_analysis.R
    - The analysis file including 5 steps:    
-   1. Merges the training and the test sets to create one data set.The merge is base on this diagram
+  	 1. Merges the training and the test sets to create one data set.The merge is base on this diagram
       (https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png)
-   2. Extracts only the measurements on the mean and standard deviation("mean"and "std") for each measurement. 
-   3. Uses descriptive activity names to name the activities in the data set
-   4. Appropriately labels the data set with descriptive variable names. 
-   5. From the data set in step 4, creates a second, independent tidy data set("tidyData.txt") with the average of each variable for each activity and each subject. 
+   	 2. Use grep and column subsetting to extracts only the measurements on the mean and standard deviation("mean"and "std") for each measurement. 
+     3. Uses descriptive activity names to name the activities in the data set( using gsub to the activities column).
+     4. Appropriately labels the data set with descriptive variable names( using sub and gsub to rename the colnumn names from the features.txt). 
+     5. From the data set in step 4, creates a second, independent tidy data set("tidyData.txt") with the average of each variable for each activity and each subject. (using write.table(data,"tidyData.txt",row.name=FALSE))
 
  * tidyData.txt
    - The tidy data set, the result and output of run_analysis.R 
      
-
-
+ * codebook.R
+   - The R script that helps produce CodeBook.md 
+   
 ##Usage 
 
 * Please put all the files in your working directory before you execute,
