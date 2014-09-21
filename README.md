@@ -27,11 +27,9 @@ In this project,
   	 1. Merges the training and the test sets to create one data set.
   	    The merge procedure is based on this diagram
         (https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png)
-        a. features are varibles 
-        b. subjectTest (subjectTrain) including subjects
-        c. xTest(xTrain) including all measured values
-        d. yTest(yTrain) including activitties
-        Set the features to be the column name, the use cbind to bind subjectTest,yTest, and xTest to form dataTest
+        [features=lebel ofvaribles, subjectTest(subjectTrain)=subjects, xTest(xTrain)=all measured values, 
+         yTest(yTrain) = coding of activitties].
+        Set the features to be the column name,  use cbind to bind subjectTest,yTest, and xTest to form dataTest
         (also subjectTrain,yTrain, and xTrain to form dataTrain), then use rbind to bind dataTest and dataTrain.
 
    	 2. Use grep and column subsetting to extracts only the measurements on the mean and standard deviation("mean"and "std") for each measurement. 
