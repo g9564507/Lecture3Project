@@ -36,7 +36,7 @@ In this project,
      
  * codebook.R
    - The R script that helps produce CodeBook.md 
-   
+
 ##Usage 
 
 * Please put all the files in your working directory before you execute,
@@ -46,10 +46,10 @@ In this project,
  Please use the instruction: data<-read.table("tidyData.txt",header=TRUE) 
 
 * To execute the run_analysis.R,
- Please use the instruction: source("run_analysis.R")
+ Please use the instruction: source("run_analysis.R") , or copy the codes and paste them in your R console.
 
 ##Citation
 - Bache, K. & Lichman, M. (2013). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
 
-- The diagram by David Hood [http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones]
+- The diagram by David Hood [https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png]
 
