@@ -75,14 +75,14 @@ dataExtract$activities <- gsub(6,"Laying",dataExtract$activities)
 
 colnames(dataExtract)<-sub("^t","time", colnames(dataExtract) )
 colnames(dataExtract)<-sub("^f","frequency", colnames(dataExtract) )
-colnames(dataExtract)<-sub("Acc","Acceleration", colnames(dataExtract) )
-colnames(dataExtract)<-sub("Mag","Magnitude", colnames(dataExtract) )
 colnames(dataExtract)<-sub("mean","Mean", colnames(dataExtract) )
 colnames(dataExtract)<-sub("std","Std", colnames(dataExtract) )
 colnames(dataExtract)<-sub("\\()","", colnames(dataExtract) )
 colnames(dataExtract)<-gsub("-","", colnames(dataExtract) )
 
-
+colnames(dataExtract)<-sub("BodyBody","Body", colnames(dataExtract) )
+##colnames(dataExtract)<-sub("Acc","Acceleration", colnames(dataExtract) )
+##colnames(dataExtract)<-sub("Mag","Magnitude", colnames(dataExtract) )
 
 ###############################################################
 ### Step 5 
@@ -115,6 +115,9 @@ for( i in 1:30){
 
 
 dim(data)
-colnames(data)<-colnames(dataExtract)
+##colnames(data)<-colnames(dataExtract)
+
+colnames(data)<-sub("^t","AvgT", colnames(dataExtract) )
+colnames(data)<-sub("^f","AvgF", colnames(data) )
 
 write.table(data,"tidyData.txt",row.name=FALSE)
