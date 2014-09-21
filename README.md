@@ -9,7 +9,7 @@ In this project,
 * Write an R script (run_analysis.R) to extract, merge and create a tidy data set (tidyData.txt)
 
 
-##Files:
+##Files
 
  * README.md
    - Basic introductions
