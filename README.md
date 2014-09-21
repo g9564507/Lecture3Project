@@ -23,13 +23,24 @@ In this project,
    More detailed information on "http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones"  
 
  * run_analysis.R
-   - The analysis file including 5 steps:    
-  	 1. Merges the training and the test sets to create one data set.The merge is base on this diagram
-      (https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png)
+   - The analysis file including 5 steps after loading data needed:    
+  	 1. Merges the training and the test sets to create one data set.
+  	    The merge procedure is based on this diagram
+        (https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png)
+        a. features are varibles 
+        b. subjectTest (subjectTrain) including subjects
+        c. xTest(xTrain) including all measured values
+        d. yTest(yTrain) including activitties
+        Set the features to be the column name, the use cbind to bind subjectTest,yTest, and xTest to form dataTest
+        (also subjectTrain,yTrain, and xTrain to form dataTrain), then use rbind to bind dataTest and dataTrain.
+
    	 2. Use grep and column subsetting to extracts only the measurements on the mean and standard deviation("mean"and "std") for each measurement. 
-     3. Uses descriptive activity names to name the activities in the data set( using gsub to the activities column).
-     4. Appropriately labels the data set with descriptive variable names( using sub and gsub to rename the colnumn names from the features.txt). 
-     5. From the data set in step 4, creates a second, independent tidy data set("tidyData.txt") with the average of each variable for each activity and each subject. (using write.table(data,"tidyData.txt",row.name=FALSE))
+
+     3. Uses descriptive activity names to name the activities in the data set( by using gsub to replace the activities codes with activities names ).
+
+     4. Appropriately labels the data set with descriptive variable names( using sub and gsub to rename the colnumn names and remove unnecessary symbols from the features.txt). 
+
+     5. From the data set in step 4, creates a second, independent tidy data set("tidyData.txt") with the average of each variable for each activity and each subject. (After using a for loop to calculate the average, then using write.table(data,"tidyData.txt",row.name=FALSE))
 
  * tidyData.txt
    - The tidy data set, the result and output of run_analysis.R 

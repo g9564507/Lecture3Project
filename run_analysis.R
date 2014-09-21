@@ -3,9 +3,9 @@
 ### Step 0
 ### Reading needed data
 
-activityLabels <- read.table("./UCI HAR Dataset/activity_labels.txt")
-features <- read.table("./UCI HAR Dataset/features.txt")
 
+features <- read.table("./UCI HAR Dataset/features.txt")
+activityLabels <- read.table("./UCI HAR Dataset/activity_labels.txt")
 ## read test data
 subjectTest <- read.table("./UCI HAR Dataset/test/subject_test.txt")
 xTest <- read.table("./UCI HAR Dataset/test/X_test.txt")

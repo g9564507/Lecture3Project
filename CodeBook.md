@@ -5,8 +5,18 @@ CodeBook
 ##Abstract
 
 This is the code book of the tidy data set.
+The data "tidyData.txt" containg 81 columns. 
+The 1st and 2nd columns are "subjects" and "activities",which are ID,
+Column 3 to 81 are Averaged Variables, which means 
+calculating the average of each variable for each activity and each subject 
+from the UCI HAR Dataset.
+
+
+
+##How varibles modified
+
 All variables are modified from the UCI HAR Dataset(refer to ./UCI HAR Dataset/features_info.txt) 
-But have been transformed as follows:
+Variables are transformed as follows:
 
 1. "-" and "()" be removed
 2. t be replaced by Time
@@ -14,12 +24,10 @@ But have been transformed as follows:
 4. mean be replace by Mean
 5. std be replaced by Std
 6. BodyBody be replaced by Body
-7. Add Avg in the from 
-
-##General Rules
+7. Add Avg in the head  to denote the averaged variables
 
 
-##ID Variables
+##ID
 
 "subjects"                           
  	- coded from 1-30, each 30 different people who took the train or test.
@@ -34,9 +42,10 @@ But have been transformed as follows:
       "Walking downstairs" 
       "Walking upstairs"  
 
-## Experimentals results variables: 
+## Averaged Variables: 
 
-### Experimentals results variables are normalized and bounded within [-1,1].
+### Averaged variables are also normalized and bounded within [-1,1] 
+    (ie. the the averaged variabless don't have units).
 
 ### The abbreviation meanings:
 * Avg the average of each variable for each activity and each subject 
@@ -51,7 +60,7 @@ But have been transformed as follows:
 * Y   Y axis
 * Z   Z axis
 
-###Experimentals results variables: 
+###Averaged Variables: 
 
 * AvgTimeBodyAccMeanX   The average of time domain body acceleration mean in X direction 
 
