@@ -1,0 +1,530 @@
+getwd()
+source(what)
+source("what.R")
+dir()
+setwd("./L3P")
+getwd()
+feature<-read.table("./UCI HAR Dataset/feature.txt")
+feature<-read.table("./UCI HAR Dataset/feature.txt",header = TRUE)
+dir()
+features<-read.table("./UCI HAR Dataset/features.txt",header = TRUE)
+what(features)
+head(features)
+grep("mean",features)
+features<-read.table("./UCI HAR Dataset/features.txt")
+head(features)
+head(features$V2)
+?grep
+grep("mean",features,fixed=FALSE)
+grep("mean",features$V2,fixed=FALSE)
+grep("mean",features$V2,fixed=TRUE)
+grep("mean",features$V2,fixed=TRUE,ignore.case =TRUE)
+grep("mean",features$V2,fixed=FALSE,ignore.case =TRUE)
+features$V2[561]
+features$V1
+grep(c("mean","std"),features$V2,fixed=FALSE,ignore.case =TRUE)
+x<-grep("mean","std",features$V2,fixed=FALSE,ignore.case =TRUE)
+x
+x<-grep("mean",features$V2,fixed=FALSE,ignore.case =TRUE)
+x
+X_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
+what(X_test )
+y<-X_test[,x]
+head(y)
+x<-grep("mean|std",features$V2,fixed=FALSE,ignore.case =TRUE)
+x
+x<-grep("mean|std",features$V2,fixed=FALSE,ignore.case =FALSE)
+x
+subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")#
+X_test <- read.table("./UCI HAR Dataset/test/X_test.txt")#
+y_test <- read.table("./UCI HAR Dataset/test/y_test.txt")
+what(subject_test)
+what(X_test)
+what(y_test)
+head(X_test)
+strX_test()
+str(X_test)
+str(y_test)
+activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")
+activity_labels
+grep("mean",feat./UCI HAR Dataset/ures$V2,fixed=FALSE,ignore.case =FALSE)
+x<-grep("mean|std",features$V2,fixed=FALSE,ignore.case =FALSE)
+x
+features$V2[x]
+x<-grep("mean()|std()",features$V2,fixed=FALSE,ignore.case =FALSE)
+x
+features$V2[x]
+x<-grep("mean()|std()",features$V2,fixed=TRUE,ignore.case =FALSE)
+x
+x<-grep("mean() | std()",features$V2,fixed=FALSE,ignore.case =FALSE)
+x
+x<-grep("mean()| std()",features$V2,fixed=FALSE,ignore.case =FALSE)
+x
+features$V2[x]
+subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")
+head(subject_test)
+y_train <- read.table("./UCI HAR Dataset/train/y_train.txt")
+levels(y_train)
+what(y_train)
+table(y_train)
+colnames(X_test)<-features$V2
+names(X_test)
+table(subject_test)
+what(subject_test)
+head(subject_test)
+head(y_test)
+length(y_test)
+length(as.vector(y_test))
+test<-data.frame(rep("test",nrow(X_test)))
+head(test)
+test<-rep("test",nrow(X_test))
+head(test)
+test<-as.data.frame(rep("test",nrow(X_test)))
+head(test)
+nrow(X_test)
+?column.names
+?col.names
+?roe.names
+?row.names
+?rbind
+m <- cbind(1, 1:7)
+m
+test_data<-cbind(subject_test,activities,X_test)
+test_data<-cbind(subject_test,y_test,X_test)
+what(test_data)
+str(test_data)
+colnames(X_test)<-features$V2#
+colnames(subject_test)<-"subjects"#
+colnames(y_test)<-"activities"#
+# test<-as.data.frame(rep("test",nrow(X_test)))#
+#
+test_data<-cbind(X_test,subject_test,y_test)
+colnames(X_train)<-features$V2#
+colnames(subject_train)<-"subjects"#
+colnames(y_train)<-"activities"#
+train_data<-cbind(X_train,subject_train,y_train)
+names(test_data)
+subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt")#
+X_train <- read.table("./UCI HAR Dataset/train/X_train.txt")#
+y_train <- read.table("./UCI HAR Dataset/train/y_train.txt")
+colnames(X_train)<-features$V2#
+colnames(subject_train)<-"subjects"#
+colnames(y_train)<-"activities"#
+train_data<-cbind(X_train,subject_train,y_train)
+names(train_data)
+dataset<-rbind(test_data,train_data)
+what(dataset)
+col_mean_std<-grep("mean() | std()",colnames(dataset),fixed=FALSE,ignore.case =FALSE)
+col_mean_std
+col_mean_std<-grep("mean|std",colnames(dataset),fixed=FALSE,ignore.case =FALSE)
+col_mean_std
+datasetExtract<- datasetMerge[col_mean_std]
+datasetExtract<- datasetMerge[,col_mean_std]
+datasetMerge<-rbind(test_data,train_data)
+col_mean_std<-grep("mean|std",colnames(datasetMerge),fixed=FALSE,ignore.case =FALSE)
+datasetExtract<- datasetMerge[,col_mean_std]
+what(datasetExtract)
+table(datasetExtract$activities)
+names(datasetExtract)
+col_mean_std<-grep("mean|std|subjects|activities",colnames(datasetMerge),fixed=FALSE,ignore.case =FALSE)#
+#
+## The result of step 2, extracted dataset = datasetExtract#
+datasetExtract<- datasetMerge[,col_mean_std]
+what(datasetExtract)
+table(datasetExtract$activities)
+library(data.table)
+library(data.table)
+x<fread("./UCI HAR Dataset/activity_labels.txt")
+x<-fread("./UCI HAR Dataset/activity_labels.txt")
+x
+x<-fread("./UCI HAR Dataset/test/X_test.txt")
+x<-fread("./UCI HAR Dataset/test/X_test.txt",header=FALSE)
+x<-fread("./UCI HAR Dataset/test/X_test.txt",header=FALSE,autostart=100L)
+activityLabels <- read.table("./UCI HAR Dataset/activity_labels.txt")#
+features <- read.table("./UCI HAR Dataset/features.txt")#
+#
+## read test data#
+subjectTest <- read.table("./UCI HAR Dataset/test/subject_test.txt")#
+xTest <- read.table("./UCI HAR Dataset/test/X_test.txt")#
+yTest <- read.table("./UCI HAR Dataset/test/y_test.txt")#
+## read train data#
+subjectTrain <- read.table("./UCI HAR Dataset/train/subject_train.txt")#
+xTrain <- read.table("./UCI HAR Dataset/train/X_train.txt")#
+yTrain <- read.table("./UCI HAR Dataset/train/y_train.txt")
+colnames(xTest)<-features$V2#
+colnames(subjectTest)<-"subjects"#
+colnames(yTest)<-"activities"#
+dataTest<-cbind(xTest,subjectTest,yTest)
+colnames(xTrain)<-features$V2#
+colnames(subjectTrain)<-"subjects"#
+colnames(yTrain)<-"activities"#
+dataTrain<-cbind(xTrain,subjectTrain,yTrain)
+datasetMerge<-rbind(dataTest,dataTrain)
+colExtract<-grep("mean|std|subjects|activities",colnames(datasetMerge),fixed=FALSE,ignore.case =FALSE)
+datasetExtract<- datasetMerge[,colExtract]
+activityLabels
+dataMerge<-rbind(dataTest,dataTrain)  #
+################################################################
+### Step 2 #
+### Extracts only the measurements on the mean and standard deviation for each measurement.#
+## Extract the column numbers of those including "mean" , "std" ,"subjects",or "activities"#
+colExtract<-grep("mean|std|subjects|activities",colnames(dataMerge),fixed=FALSE,ignore.case =FALSE)#
+#
+## The result of step 2, extracted dataset = dataExtract#
+dataExtract<- dataMerge[ ,colExtract]
+gsub(1,"Walking",dataExtract$activities)
+;gsub(1,"Walking",dataExtract$activities)
+temp<-gsub(1,"Walking",dataExtract$activities)
+notShowInR<-gsub(1,"Walking",dataExtract$activities) #
+notShowInR<-gsub(2,"Walking upstairs",dataExtract$activities)#
+notShowInR<-gsub(3,"Walking downstairs",dataExtract$activities)#
+notShowInR<-gsub(4,"Sitting",dataExtract$activities)#
+notShowInR<-gsub(5,"Standing",dataExtract$activities)#
+notShowInR<-gsub(6,"Laying",dataExtract$activities)
+names(dataExtract)
+table(dataExtract$activities)
+(dataExtract$activitieshead
+)
+head(dataExtract$activities)
+notShowInR<-gsub("1","Walking",dataExtract$activities)
+table(dataExtract$activities)
+gsub("1","Walking",dataExtract$activities)
+?mapply
+gsub(2,"Walking upstairs",dataExtract$activities)#
+gsub(3,"Walking downstairs",dataExtract$activities)#
+gsub(4,"Sitting",dataExtract$activities)#
+gsub(5,"Standing",dataExtract$activities)#
+gsub(6,"Laying",dataExtract$activities)
+table(dataExtract$activities)
+gsub("1","Walking",dataExtract$activities)
+table(dataExtract$activities)
+table(dataExtract$activities)
+str(dataExtract$activities)
+x<-1:10
+gusb(5,55,x)
+gsus(5,55,x)
+gsub(5,55,x)
+x
+dataExtract$activities<-gsub("1","Walking",dataExtract$activities)
+table(dataExtract$activities)
+dataExtract$activities <- gsub("1","Walking",dataExtract$activities) #
+dataExtract$activities <- gsub(2,"Walking upstairs",dataExtract$activities)#
+dataExtract$activities <- gsub(3,"Walking downstairs",dataExtract$activities)#
+dataExtract$activities <- gsub(4,"Sitting",dataExtract$activities)#
+dataExtract$activities <- gsub(5,"Standing",dataExtract$activities)#
+dataExtract$activities <- gsub(6,"Laying",dataExtract$activities)
+table(dataExtract$activities)
+colnames(dataExtract)
+sub(^t,"time", colnames(dataExtract) )
+temp<-sub("^t","time", colnames(dataExtract) )
+temp
+sub("^f","frequency", colnames(dataExtract) )
+colnames(dataExtract)<-sub("Acc","Acceleration", colnames(dataExtract) )
+sub("Acc","Acceleration", colnames(dataExtract) )
+colnames(dataExtract)
+sub("[-mean()]","Mean", colnames(dataExtract) )
+?'('
+sub("[-mean..]","Mean", colnames(dataExtract) )
+sub("[-mean..]$","Mean", colnames(dataExtract) )
+sub("()","", colnames(dataExtract) )
+sub('()',"", colnames(dataExtract) )
+sub("\(\)","", colnames(dataExtract) )
+sub("\\()","", colnames(dataExtract) )
+sub("-","", colnames(dataExtract) )
+gsub("-","", colnames(dataExtract) )
+dataExtract<- dataMerge[ ,colExtract]
+colnames(dataExtract)
+colnames(dataExtract)<-sub("^t","time", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("^f","frequency", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("Acc","Acceleration", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("Mag","Magnitude", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("mean","Mean", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("\\()","", colnames(dataExtract) )#
+colnames(dataExtract)<-gsub("-","", colnames(dataExtract) )
+colnames(dataExtract)
+colnames(dataExtract)<-sub("std","Std", colnames(dataExtract) )
+colnames(dataExtract)
+dataExtract<- dataMerge[ ,colExtract]
+colnames(dataExtract)<-sub("^t","time", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("^f","frequency", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("Acc","Acceleration", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("Mag","Magnitude", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("mean","Mean", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("std","Std", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("\\()","", colnames(dataExtract) )#
+colnames(dataExtract)<-gsub("-","", colnames(dataExtract) )
+colnames(dataExtract)
+temp<-dataExtract[,dataExtract$subject==1]#
+#
+write.table(temp,"dataset.txt",row.name=FALSE)
+temp<-dataExtract[,dataExtract$subjects==1]#
+#
+write.table(temp,"dataset.txt",row.name=FALSE)
+names(dataExtract)
+dataExtract$subjects
+temp<-dataExtract[,dataExtract$subjects == 1]
+temp<-dataExtract[dataExtract$subjects == 1,]
+temp
+write.table(temp,"dataset.txt",row.name=FALSE)
+## give column names and combine test data#
+colnames(xTest)<-features$V2#
+colnames(subjectTest)<-"subjects"#
+colnames(yTest)<-"activities"#
+dataTest<-cbind(subjectTest,yTest,xTest)#
+# test<-as.data.frame(rep("test",nrow(xTest)))#
+#
+## give column names and combine train data#
+colnames(xTrain)<-features$V2#
+colnames(subjectTrain)<-"subjects"#
+colnames(yTrain)<-"activities"#
+dataTrain<-cbind(subjectTrain,yTrain,xTrain)#
+#
+## The result step 1, merged dataset = dataMerge#
+dataMerge<-rbind(dataTest,dataTrain)  #
+################################################################
+### Step 2 #
+### Extracts only the measurements on the mean and standard deviation for each measurement.#
+## Extract the column numbers of those including "mean" , "std" ,"subjects",or "activities"#
+colExtract<-grep("mean|std|subjects|activities",colnames(dataMerge),fixed=FALSE,ignore.case =FALSE)#
+#
+## The result of step 2, extracted dataset = dataExtract#
+dataExtract<- dataMerge[ ,colExtract]#
+################################################################
+### Step 3 #
+### Uses descriptive activity names to name the activities in the data set#
+#
+## notShowInR is for forceing gsub() not to print the results on the screen #
+#
+dataExtract$activities <- gsub(1,"Walking",dataExtract$activities) #
+dataExtract$activities <- gsub(2,"Walking upstairs",dataExtract$activities)#
+dataExtract$activities <- gsub(3,"Walking downstairs",dataExtract$activities)#
+dataExtract$activities <- gsub(4,"Sitting",dataExtract$activities)#
+dataExtract$activities <- gsub(5,"Standing",dataExtract$activities)#
+dataExtract$activities <- gsub(6,"Laying",dataExtract$activities)#
+################################################################
+### Step 4 #
+### Uses descriptive activity names to name the activities in the data set#
+colnames(dataExtract)<-sub("^t","time", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("^f","frequency", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("Acc","Acceleration", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("Mag","Magnitude", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("mean","Mean", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("std","Std", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("\\()","", colnames(dataExtract) )#
+colnames(dataExtract)<-gsub("-","", colnames(dataExtract) )#
+################################################################
+### Step 5 #
+### From the data set in step 4, creates a second, independent tidy data set #
+### with the average of each variable for each activity and each subject. #
+#
+temp<-dataExtract[dataExtract$subjects == 1,]#
+#
+write.table(temp,"dataset.csv",row.name=FALSE)
+x<-matrix(1:9,3,3)
+x
+colSum(x)
+colSums(x)
+dim(dataExtract)
+tapply(tempFrame[,3:81],tempFrame$activities=="Laying",colsum)
+tapply(tempFrame[,3:81],tempFrame$activities=="Laying",colSums)
+tempFrame<-dataExtract
+tapply(tempFrame[,3:81],tempFrame$activities=="Laying",colSums)
+tapply(tempFrame,tempFrame$activities=="Laying",colSums)
+tapply(tempFrame[,3],tempFrame$activities=="Laying",colSums)
+tempFrame[,3]
+dim(tempFrame[,3])
+tapply(tempFrame[,3],tempFrame$activities=="Laying",sum)
+tapply(tempFrame[,3],tempFrame$activities,sum)
+x<-tapply(tempFrame[,3],tempFrame$activities,sum)
+ehat(x)
+what(x)
+x<-tapply(tempFrame[,4],tempFrame$activities,sum)
+x
+x1<-tapply(tempFrame[,3],tempFrame$activities,sum)
+x2<-tapply(tempFrame[,4],tempFrame$activities,sum)
+dataframes(x1,x2)
+data.frame(x1,x2)
+tapply(tempFrame[,3:81],tempFrame$activities,colSums)
+dim(tempFrame)
+tempFrame <- dataExtract[dataExtract$subjects == 1,]
+dim(tempFrame)
+tapply(tempFrame[,3:81],tempFrame$activities,colSums)
+tapply(tempFrame[,3:81],tempFrame$activities,sum)
+tempFrame[1:10,1:6:]
+tempFrame[1:10,1:6]
+tapply(tempFrame[,2],tempFrame$activities,sum)
+tapply(tempFrame[,3],tempFrame$activities,sum)
+tapply(tempFrame[,1],tempFrame$activities,sum)
+rownames(tapply(tempFrame[,1],tempFrame$activities,sum))
+rownames(tapply(tempFrame[,1],tempFrame$activities,mean))
+tapply(tempFrame[,1],tempFrame$activities,mean)
+for( i in 1:30){#
+	tempFrame <- dataExtract[dataExtract$subjects == i,]#
+    dataTemp[1:6,1]<- i    ## subjects #
+    dataTemp[1:6,2]<- rownames(tapply(tempFrame[,1],tempFrame$activities,mean)) ## activities#
+	for (j in 3:81){#
+#
+	    dataTemp[,j]<-tapply(tempFrame[,j],tempFrame$activities,mean)  ## mean of subject=i , column = j#
+    }#
+#
+    if(i==1){ #
+            data<-dataTemp  #
+        }#
+     else{#
+     	rbind(data,dataTemp)#
+     }#
+}
+dataTemp<-data.frame()
+for( i in 1:30){#
+	tempFrame <- dataExtract[dataExtract$subjects == i,]#
+    dataTemp[1:6,1]<- i    ## subjects #
+    dataTemp[1:6,2]<- rownames(tapply(tempFrame[,1],tempFrame$activities,mean)) ## activities#
+	for (j in 3:81){#
+#
+	    dataTemp[,j]<-tapply(tempFrame[,j],tempFrame$activities,mean)  ## mean of subject=i , column = j#
+    }#
+#
+    if(i==1){ #
+            data<-dataTemp  #
+        }#
+     else{#
+     	rbind(data,dataTemp)#
+     }#
+}
+dim(data)
+for( i in 1:30){#
+	tempFrame <- dataExtract[dataExtract$subjects == i,]#
+    dataTemp[1:6,1]<- i    ## subjects #
+    dataTemp[1:6,2]<- rownames(tapply(tempFrame[,1],tempFrame$activities,mean)) ## activities#
+    if(i==1){ #
+            data<-dataTemp  #
+        }#
+    else{#
+     	rbind(data,dataTemp)#
+     }#
+}
+dim(data)
+tempFrame<-data.frame()#
+dataTemp<-data.frame()#
+data    <- data.frame()#
+#
+for( i in 1:30){#
+	tempFrame <- dataExtract[dataExtract$subjects == i,]#
+    dataTemp[1:6,1]<- i    ## subjects #
+    dataTemp[1:6,2]<- rownames(tapply(tempFrame[,1],tempFrame$activities,mean)) ## activities#
+	for (j in 3:81){#
+#
+	    dataTemp[,j]<-tapply(tempFrame[,j],tempFrame$activities,mean)  ## mean of subject=i , column = j#
+    }#
+#
+    if(i==1){ #
+            data<-dataTemp  #
+        }#
+    else{#
+     	data<-rbind(data,dataTemp)#
+     }#
+}#
+dim(data)
+colnames(data)<-colnames(dataExtract)#
+#
+write.table(data,"dataset.csv",row.name=FALSE)
+data
+head(data)
+################################################################
+### Step 0#
+### Reading needed data#
+#
+activityLabels <- read.table("./UCI HAR Dataset/activity_labels.txt")#
+features <- read.table("./UCI HAR Dataset/features.txt")#
+#
+## read test data#
+subjectTest <- read.table("./UCI HAR Dataset/test/subject_test.txt")#
+xTest <- read.table("./UCI HAR Dataset/test/X_test.txt")#
+yTest <- read.table("./UCI HAR Dataset/test/y_test.txt")#
+## read train data#
+subjectTrain <- read.table("./UCI HAR Dataset/train/subject_train.txt")#
+xTrain <- read.table("./UCI HAR Dataset/train/X_train.txt")#
+yTrain <- read.table("./UCI HAR Dataset/train/y_train.txt")#
+#
+################################################################
+### Step 1 #
+### Merges the training and the test sets to create one data set.#
+## give column names and combine test data#
+colnames(xTest)<-features$V2#
+colnames(subjectTest)<-"subjects"#
+colnames(yTest)<-"activities"#
+dataTest<-cbind(subjectTest,yTest,xTest)#
+# test<-as.data.frame(rep("test",nrow(xTest)))#
+#
+## give column names and combine train data#
+colnames(xTrain)<-features$V2#
+colnames(subjectTrain)<-"subjects"#
+colnames(yTrain)<-"activities"#
+dataTrain<-cbind(subjectTrain,yTrain,xTrain)#
+#
+## The result step 1, merged dataset = dataMerge#
+dataMerge<-rbind(dataTest,dataTrain)  #
+################################################################
+### Step 2 #
+### Extracts only the measurements on the mean and standard deviation for each measurement.#
+## Extract the column numbers of those including "mean" , "std" ,"subjects",or "activities"#
+colExtract<-grep("mean|std|subjects|activities",colnames(dataMerge),fixed=FALSE,ignore.case =FALSE)#
+#
+## The result of step 2, extracted dataset = dataExtract#
+dataExtract<- dataMerge[ ,colExtract]#
+################################################################
+### Step 3 #
+### Uses descriptive activity names to name the activities in the data set#
+#
+## notShowInR is for forceing gsub() not to print the results on the screen #
+#
+dataExtract$activities <- gsub(1,"Walking",dataExtract$activities) #
+dataExtract$activities <- gsub(2,"Walking upstairs",dataExtract$activities)#
+dataExtract$activities <- gsub(3,"Walking downstairs",dataExtract$activities)#
+dataExtract$activities <- gsub(4,"Sitting",dataExtract$activities)#
+dataExtract$activities <- gsub(5,"Standing",dataExtract$activities)#
+dataExtract$activities <- gsub(6,"Laying",dataExtract$activities)#
+################################################################
+### Step 4 #
+### Uses descriptive activity names to name the activities in the data set#
+colnames(dataExtract)<-sub("^t","time", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("^f","frequency", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("Acc","Acceleration", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("Mag","Magnitude", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("mean","Mean", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("std","Std", colnames(dataExtract) )#
+colnames(dataExtract)<-sub("\\()","", colnames(dataExtract) )#
+colnames(dataExtract)<-gsub("-","", colnames(dataExtract) )#
+################################################################
+### Step 5 #
+### From the data set in step 4, creates a second, independent tidy data set #
+### with the average of each variable for each activity and each subject. #
+tempFrame<-data.frame()  ## dataframe to use tapply#
+dataTemp<-data.frame()   ## temp data.frame for each subject#
+data    <- data.frame()  ## the result data frame #
+#
+for( i in 1:30){#
+	tempFrame <- dataExtract[dataExtract$subjects == i,]#
+    dataTemp[1:6,1]<- i    ## subjects #
+    dataTemp[1:6,2]<- rownames(tapply(tempFrame[,1],tempFrame$activities,mean)) ## activities#
+	for (j in 3:81){#
+#
+	    dataTemp[,j]<-tapply(tempFrame[,j],tempFrame$activities,mean)  ## mean of subject=i , column = j#
+    }#
+#
+    if(i==1){ #
+            data<-dataTemp  #
+        }#
+    else{#
+     	data<-rbind(data,dataTemp)#
+     }#
+}#
+dim(data)#
+colnames(data)<-colnames(dataExtract)#
+#
+write.table(data,"dataset.txt",row.name=FALSE)
+write.table(data,"tidyData.txt",row.name=FALSE)
+datat<-read.table("tidyData.txt")
+head(datat)
+datat<-read.table("tidyData.txt",header=TRUE)
+head(datat)

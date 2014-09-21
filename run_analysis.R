@@ -35,7 +35,7 @@ colnames(subjectTrain)<-"subjects"
 colnames(yTrain)<-"activities"
 dataTrain<-cbind(subjectTrain,yTrain,xTrain)
 
-## The result step 1, merged dataset = dataMerge
+## The result step 1,combine test data and train data to a dataset = dataMerge
 dataMerge<-rbind(dataTest,dataTrain)  
 
 
@@ -89,8 +89,6 @@ colnames(dataExtract)<-gsub("-","", colnames(dataExtract) )
 ### From the data set in step 4, creates a second, independent tidy data set 
 ### with the average of each variable for each activity and each subject. 
 
-
-
 tempFrame<-data.frame()  ## dataframe to use tapply
 dataTemp<-data.frame()   ## temp data.frame for each subject
 data    <- data.frame()  ## the result data frame 
@@ -98,8 +96,8 @@ data    <- data.frame()  ## the result data frame
 for( i in 1:30){
     
 	tempFrame <- dataExtract[dataExtract$subjects == i,]
-    dataTemp[1:6,1]<- i    ## subjects 
-    dataTemp[1:6,2]<- rownames(tapply(tempFrame[,1],tempFrame$activities,mean)) ## activities
+    dataTemp[1:6,1]<- i    ## the first column be subjects, 6 is for every subject has 6 activities 
+    dataTemp[1:6,2]<- rownames(tapply(tempFrame[,1],tempFrame$activities,mean)) ## 6 activities as 2nd column
           
 	for (j in 3:81){
 
@@ -119,4 +117,4 @@ for( i in 1:30){
 dim(data)
 colnames(data)<-colnames(dataExtract)
 
-write.table(data,"dataset.csv",row.name=FALSE)
+write.table(data,"tidyData.txt",row.name=FALSE)
